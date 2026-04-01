@@ -1,0 +1,22 @@
+{
+  "name": "finnhub-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  "upload_source_maps": true,
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "FINNHUB_MCP",
+        "class_name": "FinnhubMCP"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["FinnhubMCP"]
+    }
+  ]
+}
