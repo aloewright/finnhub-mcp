@@ -1,0 +1,22 @@
+{
+  "name": "finnhub-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js --external:async_hooks --external:node:async_hooks --external:cloudflare:workers --conditions=workerd,worker,browser --target=es2022 --minify",
+    "types": "wrangler types"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "agents": "^0.0.98",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250327.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.14.0"
+  }
+}
